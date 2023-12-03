@@ -1,0 +1,43 @@
+.evernote{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main_container_bg{
+    height: 460px;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('../../utils/images/bg.png');
+    background-repeat: none;
+    background-position: 0 -350px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.top_widgets{
+    margin-left: 30px;
+    margin-top: -250px;
+
+    display: flex;
+    gap: 30px;
+    padding-right: 20px;
+}
+
+.upload_items{
+    margin-left: 30px;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+
+
+@media (max-width:1000px) {
+    .top_widgets{
+        flex-direction: column;
+        margin-top: -320px;
+    }
+}

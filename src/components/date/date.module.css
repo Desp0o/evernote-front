@@ -1,0 +1,24 @@
+.date{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+    display: flex;
+    color: whitesmoke;
+    font-size: 900;
+    font-size: 14px;
+    text-transform: capitalize;  
+    padding: 10px;
+    background-color: var(--grey);
+    border-radius: 10px;
+}
+
+@media (max-width:768px) {
+    .date{
+        top: 70px;
+        right: unset;
+        left: 30px;
+        font-size: 900;
+        font-size: 12px;
+    }
+}

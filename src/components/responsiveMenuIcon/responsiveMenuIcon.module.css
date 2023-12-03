@@ -1,0 +1,19 @@
+.responsiveMenuIcon{
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    z-index: 8;
+    cursor: pointer;
+    display: none;
+}
+
+.menu_icon_responsive{
+    width: 25px;
+    height: auto;
+}
+
+@media (max-width:768px) {
+    .responsiveMenuIcon{
+        display: block;
+    }
+}

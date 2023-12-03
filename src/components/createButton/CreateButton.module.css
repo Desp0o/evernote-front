@@ -1,0 +1,49 @@
+.create_btn{
+    box-sizing: border-box;
+    position: relative;
+
+    width: 210px;
+    height: 40px;
+    background-color: var(--green);
+
+    border-radius: 30px;
+
+    margin: 0 auto 0 auto;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+
+    font-weight: 600;
+    color: var(--black);
+}
+
+.create_btn:hover{
+    background-color: var(--green-hover);
+}
+
+.create_btn_red{
+    box-sizing: border-box;
+    position: relative;
+
+    width: 210px;
+    height: 40px;
+    background-color: rgb(192, 10, 10);
+
+    border-radius: 30px;
+
+    margin: 0 auto 0 auto;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+
+    font-weight: 600;
+    color: var(--black);
+}

@@ -1,0 +1,213 @@
+.tasks{
+    box-sizing: border-box;
+    position: fixed;
+    left: 250px;
+    top: 0;
+    width: 450px;
+    height: 100vh;
+    background-color: var(--dark-light);
+    z-index: 5;
+    transition: all 0.2s ease;
+    overflow-x:hidden;
+    padding: 10px;
+}
+
+.tasksDisabled{
+    box-sizing: border-box;
+    position: fixed;
+    left: -200px;
+    top: 0;
+    width: 450px;
+    height: 100vh;
+    background-color: var(--dark-light);
+    z-index: 5;
+    overflow-x:hidden;
+    padding: 10px;
+}
+
+.task_elements{
+    margin-top: 60px;
+    width: 100%;
+    padding-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task_single_element{
+    box-sizing: border-box;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    text-wrap: wrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.task_single_element_body{
+    width: 80%;
+    word-wrap: break-word;
+}
+
+.task_single_element_body_completed{
+    width: 80%;
+    word-wrap: break-word;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.task_circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid var(--task-color);
+}
+
+.task_circle_filled{
+    width: 20px;
+    height: 20px;
+    background-color: var(--task-color);
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid var(--task-color);
+}
+
+.create_task_bg{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 98;
+    background-color: rgba(0, 0, 0, 0.552);
+    position: fixed;
+}
+
+.create_task_bg_disabled{
+    display: none;
+}
+
+.create_task{
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 600px;
+    max-width: 90%;
+    height: 200px;
+    background-color: var(--black-light);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 7;
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0px -1px 29px 1px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px -1px 29px 1px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px -1px 29px 1px rgba(0,0,0,0.7);
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.taks_dot{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.task_input{
+    width: 100%;
+    height: 30px;
+    color: whitesmoke;
+    text-wrap: wrap;
+    word-break: break-all;
+}
+
+.TaskButtonComponent{
+    padding: 10px;
+    width: max-content;
+    color: var(--grey);
+    border-radius: 5px;
+    border: 1px solid var(--grey);
+    cursor: pointer;
+}
+
+.TaskButtonComponentGreen{
+    padding: 10px;
+    width: max-content;
+    color: var(--black);
+    border-radius: 5px;
+    background-color: var(--green);
+    cursor: pointer;
+}
+
+.task_status{
+    text-align: center;
+    color: var(--green);
+}
+
+.task_status_error{
+    text-align: center;
+    color: red;
+}
+
+.crt_tasks_btns{
+    align-self: flex-end;
+    justify-self: end;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.task_trash{
+    width:15px
+}
+
+.task_closer{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+@media (max-width:768px) {
+    .tasks{
+        box-sizing: border-box;
+        position: fixed;
+        left: 0px;
+        top: 0;
+        width: 450px;
+        max-width: 80%;
+        height: 100vh;
+        background-color: var(--dark-light);
+        z-index: 5;
+        transition: all 0.2s ease;
+        overflow-x:hidden;
+        padding: 10px;
+    }
+    
+    .tasksDisabled{
+        box-sizing: border-box;
+        position: fixed;
+        left: -450px;
+        top: 0;
+        width: 450px;
+        height: 100vh;
+        background-color: var(--dark-light);
+        z-index: 5;
+        overflow-x:hidden;
+        padding: 10px;
+        transition: all 0.2s ease;
+    }
+}

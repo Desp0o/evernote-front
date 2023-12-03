@@ -1,0 +1,24 @@
+.add_new{
+    position: relative;
+}
+
+.add_dashbouard{
+    top: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: fit-content;
+    background-color: var(--grey);
+
+    padding: 15px 10px;
+
+    border-radius: 10px;
+    display: none;
+
+    transition: all 0.3s ease;
+}
+
+.add_dashbouard_visible{
+    display: block;
+}

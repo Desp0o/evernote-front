@@ -1,0 +1,11 @@
+.uploadsDash{
+    position: relative;
+    width: 99%;
+    height: 260px;
+
+    background-color: var(--black-light);
+    border-radius: 10px;
+
+    color: whitesmoke;
+    overflow: hidden;
+}

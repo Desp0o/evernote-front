@@ -1,0 +1,49 @@
+.createNote{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    color: whitesmoke;
+}
+.note_create_title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 40px;
+}
+
+.noteArea{
+    box-sizing: border-box;
+    padding: 0px 50px 50px 50px;
+
+}
+
+.custom_editor{
+    height: 500px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.note_title_input{
+    box-sizing: border-box;
+    padding-left: 15px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.note_response_status{
+    text-align: center;
+    color: var(--green);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+@media (max-width:1440px) {
+    .custom_editor{
+        height: 350px;
+        overflow: hidden;
+        padding-bottom: 70px;
+    }
+}

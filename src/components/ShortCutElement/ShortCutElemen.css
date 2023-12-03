@@ -1,0 +1,66 @@
+
+.shortCut_element{
+    box-sizing: border-box;
+    position: relative;
+
+    width: 210px;
+    height: 40px;
+    background-color: var(--green);
+
+    border-radius: 30px;
+
+    margin: 0 auto 0 auto;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+
+    transition: all 0.3s ease;
+}
+.shortCut_element:hover{
+    background-color: var(--green-hover);
+}
+
+
+.shortCut_element_task{
+    box-sizing: border-box;
+    position: relative;
+
+    width: 210px;
+    height: 40px;
+    background-color: var(--pink);
+
+    border-radius: 30px;
+
+    margin: 15px auto 0 auto;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+
+    transition: all 0.3s ease;
+}
+
+.shortCut_element_task:hover{
+    background-color: var(--pink-hover);
+}
+
+.inner_container{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.first_icon{
+    height: 15px;
+    width: auto;
+}
+
+.second_icon{
+    height: 10px;
+}
+
