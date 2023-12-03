@@ -68941,7 +68941,7 @@ function NotePage() {
                 columnNumber: 9
             }, this),
             loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: (0, _notePageModuleCssDefault.default).notePagStyle,
+                className: (0, _notePageModuleCssDefault.default).single_note_loading,
                 children: "Loading Note..."
             }, void 0, false, {
                 fileName: "src/pages/NotePage.js",

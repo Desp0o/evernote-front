@@ -60,7 +60,7 @@ export default function NotePage() {
         <Tasks />
         <CreateTask />
 
-        {loading ? <p className={notePagStyle.notePagStyle}>Loading Note...</p>
+        {loading ? <p className={notePagStyle.single_note_loading}>Loading Note...</p>
                  : <div className={notePagStyle.single_note_page}>
                         <div className={notePagStyle.single_note_body}>
                             <p className={notePagStyle.single_note_header}>{noteContent?.noteTitle}</p>
