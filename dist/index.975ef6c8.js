@@ -53681,6 +53681,9 @@ const modules = {
     ],
     clipboard: {
         matchVisual: true
+    },
+    syntax: {
+        highlight: (text)=>hljs.highlightAuto(text).value
     }
 };
 const formats = [
@@ -53752,12 +53755,12 @@ function CreateNote() {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tasksDefault.default), {}, void 0, false, {
                 fileName: "src/pages/CreateNote.js",
-                lineNumber: 118,
+                lineNumber: 122,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createTaskDefault.default), {}, void 0, false, {
                 fileName: "src/pages/CreateNote.js",
-                lineNumber: 119,
+                lineNumber: 123,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -53765,7 +53768,7 @@ function CreateNote() {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBarDefault.default), {}, void 0, false, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 121,
+                        lineNumber: 125,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -53773,7 +53776,7 @@ function CreateNote() {
                         children: "Create Note"
                     }, void 0, false, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 123,
+                        lineNumber: 127,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -53789,7 +53792,7 @@ function CreateNote() {
                                 onChange: (e)=>setNoteTitle(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/pages/CreateNote.js",
-                                lineNumber: 126,
+                                lineNumber: 130,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactQuillDefault.default), {
@@ -53801,13 +53804,13 @@ function CreateNote() {
                                 className: (0, _createNoteModuleCssDefault.default).custom_editor
                             }, void 0, false, {
                                 fileName: "src/pages/CreateNote.js",
-                                lineNumber: 136,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 125,
+                        lineNumber: 129,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createButtonDefault.default), {
@@ -53815,7 +53818,7 @@ function CreateNote() {
                         funName: sendNote
                     }, void 0, false, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 146,
+                        lineNumber: 150,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -53823,19 +53826,19 @@ function CreateNote() {
                         children: status
                     }, void 0, false, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 147,
+                        lineNumber: 151,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/CreateNote.js",
-                lineNumber: 120,
+                lineNumber: 124,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/pages/CreateNote.js",
-        lineNumber: 117,
+        lineNumber: 121,
         columnNumber: 5
     }, this);
 }

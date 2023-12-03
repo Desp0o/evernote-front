@@ -33,10 +33,14 @@ const modules = {
     ["link"], // add a link option
     ["video"], // add a video embed option
     ["clean"],
+    
   ],
   clipboard: {
     matchVisual: true,
   },
+  syntax: {
+    highlight: text => hljs.highlightAuto(text).value
+  }
 };
 
 const formats = [
