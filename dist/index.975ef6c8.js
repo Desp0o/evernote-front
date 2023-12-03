@@ -69092,6 +69092,7 @@ var _s = $RefreshSig$();
 (0, _reactQuill.Quill).register("modules/blotFormatter", (0, _quillBlotFormatterDefault.default));
 const modules = {
     blotFormatter: {},
+    syntax: true,
     toolbar: [
         [
             "bold",
@@ -69282,12 +69283,12 @@ function UpdateNote() {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tasksDefault.default), {}, void 0, false, {
                 fileName: "src/pages/UpdateNote.js",
-                lineNumber: 128,
+                lineNumber: 129,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createTaskDefault.default), {}, void 0, false, {
                 fileName: "src/pages/UpdateNote.js",
-                lineNumber: 129,
+                lineNumber: 130,
                 columnNumber: 7
             }, this),
             loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -69295,14 +69296,14 @@ function UpdateNote() {
                 children: "Loading Note..."
             }, void 0, false, {
                 fileName: "src/pages/UpdateNote.js",
-                lineNumber: 131,
+                lineNumber: 132,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: (0, _createNoteModuleCssDefault.default).createNote,
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBarDefault.default), {}, void 0, false, {
                         fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 134,
+                        lineNumber: 135,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -69310,7 +69311,7 @@ function UpdateNote() {
                         children: "Update Note"
                     }, void 0, false, {
                         fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 135,
+                        lineNumber: 136,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69326,7 +69327,7 @@ function UpdateNote() {
                                 onChange: (e)=>setNoteTitle(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/pages/UpdateNote.js",
-                                lineNumber: 138,
+                                lineNumber: 139,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactQuillDefault.default), {
@@ -69338,13 +69339,13 @@ function UpdateNote() {
                                 className: (0, _createNoteModuleCssDefault.default).custom_editor
                             }, void 0, false, {
                                 fileName: "src/pages/UpdateNote.js",
-                                lineNumber: 148,
+                                lineNumber: 149,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 137,
+                        lineNumber: 138,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createButtonDefault.default), {
@@ -69352,7 +69353,7 @@ function UpdateNote() {
                         funName: updateNote
                     }, void 0, false, {
                         fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 158,
+                        lineNumber: 159,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -69360,19 +69361,19 @@ function UpdateNote() {
                         children: status
                     }, void 0, false, {
                         fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 159,
+                        lineNumber: 160,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/UpdateNote.js",
-                lineNumber: 133,
+                lineNumber: 134,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/pages/UpdateNote.js",
-        lineNumber: 127,
+        lineNumber: 128,
         columnNumber: 5
     }, this);
 }

@@ -17,6 +17,7 @@ Quill.register("modules/blotFormatter", BlotFormatter);
 
 const modules = {
   blotFormatter: {},
+  syntax: true,
   toolbar: [
     ["bold", "italic", "underline", "strike"], // toggled buttons
     ["blockquote", "code-block"],
