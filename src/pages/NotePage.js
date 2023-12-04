@@ -19,7 +19,7 @@ export default function NotePage() {
     const [noteContent, setNoteContent] = useState()
     const navigate = useNavigate()
 
-    const getSingleNotePath = process.env.REACT_APP_UPDATE_NOTE
+    const getSingleNotePath = process.env.REACT_APP_GET_SINGLE_NOTE
     const deleteSinglePostPath = process.env.REACT_APP_DELETE_NOTE
 
     useEffect(()=>{

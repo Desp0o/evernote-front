@@ -203,7 +203,7 @@
         left: -450px;
         top: 0;
         width: 450px;
-        max-width: 80%;
+        max-width:80%;
         height: 100vh;
         background-color: var(--dark-light);
         z-index: 5;

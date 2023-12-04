@@ -805,6 +805,7 @@ input, textarea {
     background-color: var(--dark-light);
     z-index: 5;
     width: 450px;
+    max-width: 80%;
     height: 100vh;
     padding: 10px;
     transition: all .2s;

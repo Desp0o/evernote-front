@@ -24,7 +24,6 @@ export default function Tasks() {
       setAllTasksArray(res.data);
       setLoading(false);
       setTaskHandlerWork(false);
-      console.log('i am');
     } catch (error) {
       setLoading(false);
       console.log(error);

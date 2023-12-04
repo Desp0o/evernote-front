@@ -33,6 +33,7 @@ const modules = {
     ["link"], // add a link option
     ["video"], // add a video embed option
     ["clean"],
+    
   ],
   clipboard: {
     matchVisual: true,

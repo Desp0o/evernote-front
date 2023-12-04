@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { ProviderPass } from "../components/Provider";
-import crNote from './styles/CreateNote.module.css'
+import crNote from "./styles/CreateNote.module.css";
+import notePagStyle from "./styles/notePage.module.css";
 import ReactQuill from "react-quill";
 import { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -10,8 +11,8 @@ import CreateButton from "../components/createButton/CreateButton";
 import SideBar from "../components/SideBar/SideBar";
 import { useParams } from "react-router-dom";
 import Container from "../components/container/Container";
-import Tasks from '../components/Tasks/Tasks'
-import CreateTask from "../components/Tasks/CreateTask"
+import Tasks from "../components/Tasks/Tasks";
+import CreateTask from "../components/Tasks/CreateTask";
 
 Quill.register("modules/blotFormatter", BlotFormatter);
 
@@ -68,12 +69,11 @@ const formats = [
 
 export default function UpdateNote() {
   const { id } = useParams();
-
+  const getSingleNotePath = process.env.REACT_APP_GET_SINGLE_NOTE;
+  const noteUpdatePath = process.env.REACT_APP_UPDATE_NOTE;
   const { user } = useContext(ProviderPass);
 
-  const [noteTitle, setNoteTitle] = useState(
-    JSON.parse(localStorage.getItem("noteTitle")) || ""
-  );
+  const [noteTitle, setNoteTitle] = useState();
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -84,7 +84,7 @@ export default function UpdateNote() {
 
     try {
       const res = await axios.post(
-        `http://localhost:3300/notes/updatenote/${id}`,
+        `${noteUpdatePath + id}`,
         {
           content: noteContent,
           user: user,
@@ -106,14 +106,13 @@ export default function UpdateNote() {
 
     const getSingleNote = async () => {
       try {
-        const res = await axios.get(`http://localhost:3300/notes/${id}`, {
+        const res = await axios.get(`${getSingleNotePath + id}`, {
           params: { noteId: id, uid: user.uid },
           withCredentials: true,
         });
         setLoading(false);
-        console.log(res.data[0]);
-        setNoteTitle(res.data[0].noteTitle);
         setNoteContent(res.data[0].content);
+        setNoteTitle(res.data[0].noteTitle)
       } catch (error) {
         setLoading(false);
         console.log(error);
@@ -125,12 +124,12 @@ export default function UpdateNote() {
 
   return (
     <Container>
-      <Tasks />
-      <CreateTask />
       {loading ? (
-        <p className={crNote.crNote}>Loading Note...</p>
+        <p className={notePagStyle.single_note_loading}>Loading Note...</p>
       ) : (
         <div className={crNote.createNote}>
+          <Tasks />
+          <CreateTask />
           <SideBar />
           <p className={crNote.note_create_title}>Update Note</p>
 
