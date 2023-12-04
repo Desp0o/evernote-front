@@ -53100,7 +53100,6 @@ function Tasks() {
             setAllTasksArray(res.data);
             setLoading(false);
             setTaskHandlerWork(false);
-            console.log("i am");
         } catch (error) {
             setLoading(false);
             console.log(error);
@@ -53174,14 +53173,14 @@ function Tasks() {
                 onClick: taskHandler
             }, void 0, false, {
                 fileName: "src/components/Tasks/Tasks.js",
-                lineNumber: 110,
+                lineNumber: 109,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: (0, _tasksModuleCssDefault.default).task_elements,
                 children: loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sipnnerDefault.default), {}, void 0, false, {
                     fileName: "src/components/Tasks/Tasks.js",
-                    lineNumber: 113,
+                    lineNumber: 112,
                     columnNumber: 11
                 }, this) : allTasksArrayReversed.map((item)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskSingleElementDefault.default), {
@@ -53192,19 +53191,19 @@ function Tasks() {
                         completedHandler: ()=>(setActiveElement(item.taskId), markAsComplete(item.taskId))
                     }, item.taskId, false, {
                         fileName: "src/components/Tasks/Tasks.js",
-                        lineNumber: 117,
+                        lineNumber: 116,
                         columnNumber: 15
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "src/components/Tasks/Tasks.js",
-                lineNumber: 111,
+                lineNumber: 110,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/Tasks/Tasks.js",
-        lineNumber: 109,
+        lineNumber: 108,
         columnNumber: 5
     }, this);
 }
