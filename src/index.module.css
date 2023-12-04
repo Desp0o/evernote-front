@@ -44,6 +44,12 @@
     box-shadow: none;  
   }
   
+  input, 
+  textarea:focus{
+    font-size: 16px;
+  }
+  
+  
   a{
     color: inherit;
     width: fit-content;
