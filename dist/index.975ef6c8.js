@@ -53681,9 +53681,6 @@ const modules = {
     ],
     clipboard: {
         matchVisual: true
-    },
-    syntax: {
-        highlight: (text)=>hljs.highlightAuto(text).value
     }
 };
 const formats = [
@@ -53755,12 +53752,12 @@ function CreateNote() {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tasksDefault.default), {}, void 0, false, {
                 fileName: "src/pages/CreateNote.js",
-                lineNumber: 122,
+                lineNumber: 119,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createTaskDefault.default), {}, void 0, false, {
                 fileName: "src/pages/CreateNote.js",
-                lineNumber: 123,
+                lineNumber: 120,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -53768,7 +53765,7 @@ function CreateNote() {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBarDefault.default), {}, void 0, false, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 125,
+                        lineNumber: 122,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -53776,7 +53773,7 @@ function CreateNote() {
                         children: "Create Note"
                     }, void 0, false, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 127,
+                        lineNumber: 124,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -53792,7 +53789,7 @@ function CreateNote() {
                                 onChange: (e)=>setNoteTitle(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/pages/CreateNote.js",
-                                lineNumber: 130,
+                                lineNumber: 127,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactQuillDefault.default), {
@@ -53804,13 +53801,13 @@ function CreateNote() {
                                 className: (0, _createNoteModuleCssDefault.default).custom_editor
                             }, void 0, false, {
                                 fileName: "src/pages/CreateNote.js",
-                                lineNumber: 140,
+                                lineNumber: 137,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 129,
+                        lineNumber: 126,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createButtonDefault.default), {
@@ -53818,7 +53815,7 @@ function CreateNote() {
                         funName: sendNote
                     }, void 0, false, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 150,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -53826,19 +53823,19 @@ function CreateNote() {
                         children: status
                     }, void 0, false, {
                         fileName: "src/pages/CreateNote.js",
-                        lineNumber: 151,
+                        lineNumber: 148,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/CreateNote.js",
-                lineNumber: 124,
+                lineNumber: 121,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/pages/CreateNote.js",
-        lineNumber: 121,
+        lineNumber: 118,
         columnNumber: 5
     }, this);
 }
@@ -69072,6 +69069,8 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _provider = require("../components/Provider");
 var _createNoteModuleCss = require("./styles/CreateNote.module.css");
 var _createNoteModuleCssDefault = parcelHelpers.interopDefault(_createNoteModuleCss);
+var _notePageModuleCss = require("./styles/notePage.module.css");
+var _notePageModuleCssDefault = parcelHelpers.interopDefault(_notePageModuleCss);
 var _reactQuill = require("react-quill");
 var _reactQuillDefault = parcelHelpers.interopDefault(_reactQuill);
 var _quillSnowCss = require("react-quill/dist/quill.snow.css");
@@ -69092,7 +69091,6 @@ var _s = $RefreshSig$();
 (0, _reactQuill.Quill).register("modules/blotFormatter", (0, _quillBlotFormatterDefault.default));
 const modules = {
     blotFormatter: {},
-    syntax: true,
     toolbar: [
         [
             "bold",
@@ -69227,6 +69225,7 @@ const formats = [
 function UpdateNote() {
     _s();
     const { id } = (0, _reactRouterDom.useParams)();
+    const getSingleNotePath = "https://kikla-139bdd8f8b23.herokuapp.com/notes/";
     const { user } = (0, _react.useContext)((0, _provider.ProviderPass));
     const [noteTitle, setNoteTitle] = (0, _react.useState)(JSON.parse(localStorage.getItem("noteTitle")) || "");
     const [sending, setSending] = (0, _react.useState)(false);
@@ -69236,7 +69235,7 @@ function UpdateNote() {
     const updateNote = async ()=>{
         setSending(true);
         try {
-            const res = await (0, _axiosDefault.default).post(`http://localhost:3300/notes/updatenote/${id}`, {
+            const res = await (0, _axiosDefault.default).post(`https://kikla-139bdd8f8b23.herokuapp.com/${id}`, {
                 content: noteContent,
                 user: user,
                 noteTitle: noteTitle
@@ -69258,7 +69257,7 @@ function UpdateNote() {
         setLoading(true);
         const getSingleNote = async ()=>{
             try {
-                const res = await (0, _axiosDefault.default).get(`http://localhost:3300/notes/${id}`, {
+                const res = await (0, _axiosDefault.default).get(`${getSingleNotePath + id}`, {
                     params: {
                         noteId: id,
                         uid: user.uid
@@ -69266,8 +69265,6 @@ function UpdateNote() {
                     withCredentials: true
                 });
                 setLoading(false);
-                console.log(res.data[0]);
-                setNoteTitle(res.data[0].noteTitle);
                 setNoteContent(res.data[0].content);
             } catch (error) {
                 setLoading(false);
@@ -69280,100 +69277,98 @@ function UpdateNote() {
         user.id
     ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tasksDefault.default), {}, void 0, false, {
-                fileName: "src/pages/UpdateNote.js",
-                lineNumber: 129,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createTaskDefault.default), {}, void 0, false, {
-                fileName: "src/pages/UpdateNote.js",
-                lineNumber: 130,
-                columnNumber: 7
-            }, this),
-            loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: (0, _createNoteModuleCssDefault.default).crNote,
-                children: "Loading Note..."
-            }, void 0, false, {
-                fileName: "src/pages/UpdateNote.js",
-                lineNumber: 132,
-                columnNumber: 9
-            }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: (0, _createNoteModuleCssDefault.default).createNote,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBarDefault.default), {}, void 0, false, {
-                        fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 135,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: (0, _createNoteModuleCssDefault.default).note_create_title,
-                        children: "Update Note"
-                    }, void 0, false, {
-                        fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 136,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: (0, _createNoteModuleCssDefault.default).noteArea,
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                className: (0, _createNoteModuleCssDefault.default).note_title_input,
-                                type: "text",
-                                name: "noteTitle",
-                                id: "noteTitle",
-                                placeholder: "Enter Note Title",
-                                value: noteTitle,
-                                onChange: (e)=>setNoteTitle(e.target.value)
-                            }, void 0, false, {
-                                fileName: "src/pages/UpdateNote.js",
-                                lineNumber: 139,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactQuillDefault.default), {
-                                theme: "snow",
-                                value: noteContent,
-                                onChange: setNoteContent,
-                                modules: modules,
-                                formats: formats,
-                                className: (0, _createNoteModuleCssDefault.default).custom_editor
-                            }, void 0, false, {
-                                fileName: "src/pages/UpdateNote.js",
-                                lineNumber: 149,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 138,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createButtonDefault.default), {
-                        text: "Update Note",
-                        funName: updateNote
-                    }, void 0, false, {
-                        fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 159,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: (0, _createNoteModuleCssDefault.default).note_response_status,
-                        children: status
-                    }, void 0, false, {
-                        fileName: "src/pages/UpdateNote.js",
-                        lineNumber: 160,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/pages/UpdateNote.js",
-                lineNumber: 134,
-                columnNumber: 9
-            }, this)
-        ]
-    }, void 0, true, {
+        children: loading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+            className: (0, _notePageModuleCssDefault.default).single_note_loading,
+            children: "Loading Note..."
+        }, void 0, false, {
+            fileName: "src/pages/UpdateNote.js",
+            lineNumber: 127,
+            columnNumber: 9
+        }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: (0, _createNoteModuleCssDefault.default).createNote,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tasksDefault.default), {}, void 0, false, {
+                    fileName: "src/pages/UpdateNote.js",
+                    lineNumber: 130,
+                    columnNumber: 12
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createTaskDefault.default), {}, void 0, false, {
+                    fileName: "src/pages/UpdateNote.js",
+                    lineNumber: 131,
+                    columnNumber: 7
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBarDefault.default), {}, void 0, false, {
+                    fileName: "src/pages/UpdateNote.js",
+                    lineNumber: 132,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: (0, _createNoteModuleCssDefault.default).note_create_title,
+                    children: "Update Note"
+                }, void 0, false, {
+                    fileName: "src/pages/UpdateNote.js",
+                    lineNumber: 133,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: (0, _createNoteModuleCssDefault.default).noteArea,
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            className: (0, _createNoteModuleCssDefault.default).note_title_input,
+                            type: "text",
+                            name: "noteTitle",
+                            id: "noteTitle",
+                            placeholder: "Enter Note Title",
+                            value: noteTitle,
+                            onChange: (e)=>setNoteTitle(e.target.value)
+                        }, void 0, false, {
+                            fileName: "src/pages/UpdateNote.js",
+                            lineNumber: 136,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactQuillDefault.default), {
+                            theme: "snow",
+                            value: noteContent,
+                            onChange: setNoteContent,
+                            modules: modules,
+                            formats: formats,
+                            className: (0, _createNoteModuleCssDefault.default).custom_editor
+                        }, void 0, false, {
+                            fileName: "src/pages/UpdateNote.js",
+                            lineNumber: 146,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/pages/UpdateNote.js",
+                    lineNumber: 135,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createButtonDefault.default), {
+                    text: "Update Note",
+                    funName: updateNote
+                }, void 0, false, {
+                    fileName: "src/pages/UpdateNote.js",
+                    lineNumber: 156,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: (0, _createNoteModuleCssDefault.default).note_response_status,
+                    children: status
+                }, void 0, false, {
+                    fileName: "src/pages/UpdateNote.js",
+                    lineNumber: 157,
+                    columnNumber: 11
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/pages/UpdateNote.js",
+            lineNumber: 129,
+            columnNumber: 9
+        }, this)
+    }, void 0, false, {
         fileName: "src/pages/UpdateNote.js",
-        lineNumber: 128,
+        lineNumber: 124,
         columnNumber: 5
     }, this);
 }
@@ -69391,7 +69386,7 @@ $RefreshReg$(_c, "UpdateNote");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","../components/Provider":"4V005","react-quill":"kyGm9","react-quill/dist/quill.snow.css":"6tXn9","quill-blot-formatter":"k9mP5","../components/createButton/CreateButton":"9jYl7","../components/SideBar/SideBar":"5g0yP","react-router-dom":"9xmpe","../components/container/Container":"rXTem","../components/Tasks/Tasks":"dWkC4","../components/Tasks/CreateTask":"gMmw2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./styles/CreateNote.module.css":"jRi8Q"}],"6tXn9":[function() {},{}],"3FFbu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","../components/Provider":"4V005","react-quill":"kyGm9","react-quill/dist/quill.snow.css":"6tXn9","quill-blot-formatter":"k9mP5","../components/createButton/CreateButton":"9jYl7","../components/SideBar/SideBar":"5g0yP","react-router-dom":"9xmpe","../components/container/Container":"rXTem","../components/Tasks/Tasks":"dWkC4","../components/Tasks/CreateTask":"gMmw2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./styles/CreateNote.module.css":"jRi8Q","./styles/notePage.module.css":"hjHw8"}],"6tXn9":[function() {},{}],"3FFbu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d3a7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

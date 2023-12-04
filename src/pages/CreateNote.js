@@ -38,9 +38,6 @@ const modules = {
   clipboard: {
     matchVisual: true,
   },
-  syntax: {
-    highlight: text => hljs.highlightAuto(text).value
-  }
 };
 
 const formats = [

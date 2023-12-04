@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { ProviderPass } from "../components/Provider";
 import crNote from './styles/CreateNote.module.css'
+import notePagStyle from "./styles/notePage.module.css"
 import ReactQuill from "react-quill";
 import { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -17,7 +18,6 @@ Quill.register("modules/blotFormatter", BlotFormatter);
 
 const modules = {
   blotFormatter: {},
-  syntax: true,
   toolbar: [
     ["bold", "italic", "underline", "strike"], // toggled buttons
     ["blockquote", "code-block"],
@@ -69,7 +69,7 @@ const formats = [
 
 export default function UpdateNote() {
   const { id } = useParams();
-
+  const getSingleNotePath = process.env.REACT_APP_GET_SINGLE_NOTE
   const { user } = useContext(ProviderPass);
 
   const [noteTitle, setNoteTitle] = useState(
@@ -85,7 +85,7 @@ export default function UpdateNote() {
 
     try {
       const res = await axios.post(
-        `http://localhost:3300/notes/updatenote/${id}`,
+        `https://kikla-139bdd8f8b23.herokuapp.com/${id}`,
         {
           content: noteContent,
           user: user,
@@ -102,36 +102,33 @@ export default function UpdateNote() {
     }
   };
 
-  useEffect(() => {
-    setLoading(true);
+  useEffect(()=>{
+    setLoading(true)
+    
+    const getSingleNote = async ()=>{
+        try {
+            const res = await axios.get(`${getSingleNotePath + id}`, 
+            {params: { noteId: id, uid: user.uid }, withCredentials:true})
+            setLoading(false)
+            setNoteContent(res.data[0].content)
+        } catch (error) {
+            setLoading(false)
+            console.log(error);
+        }
+    }
 
-    const getSingleNote = async () => {
-      try {
-        const res = await axios.get(`http://localhost:3300/notes/${id}`, {
-          params: { noteId: id, uid: user.uid },
-          withCredentials: true,
-        });
-        setLoading(false);
-        console.log(res.data[0]);
-        setNoteTitle(res.data[0].noteTitle);
-        setNoteContent(res.data[0].content);
-      } catch (error) {
-        setLoading(false);
-        console.log(error);
-      }
-    };
-
-    getSingleNote();
-  }, [id, user.id]);
+    getSingleNote()
+},[id, user.id])
 
   return (
     <Container>
-      <Tasks />
-      <CreateTask />
+     
       {loading ? (
-        <p className={crNote.crNote}>Loading Note...</p>
+        <p className={notePagStyle.single_note_loading}>Loading Note...</p>
       ) : (
         <div className={crNote.createNote}>
+           <Tasks />
+      <CreateTask />
           <SideBar />
           <p className={crNote.note_create_title}>Update Note</p>
 
