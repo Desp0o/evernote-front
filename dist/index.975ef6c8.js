@@ -69226,8 +69226,9 @@ function UpdateNote() {
     _s();
     const { id } = (0, _reactRouterDom.useParams)();
     const getSingleNotePath = "https://kikla-139bdd8f8b23.herokuapp.com/notes/";
+    const noteUpdatePath = "https://kikla-139bdd8f8b23.herokuapp.com/notes/updatenote/";
     const { user } = (0, _react.useContext)((0, _provider.ProviderPass));
-    const [noteTitle, setNoteTitle] = (0, _react.useState)(JSON.parse(localStorage.getItem("noteTitle")) || "");
+    const [noteTitle, setNoteTitle] = (0, _react.useState)();
     const [sending, setSending] = (0, _react.useState)(false);
     const [status, setStatus] = (0, _react.useState)(null);
     const [loading, setLoading] = (0, _react.useState)(false);
@@ -69235,7 +69236,7 @@ function UpdateNote() {
     const updateNote = async ()=>{
         setSending(true);
         try {
-            const res = await (0, _axiosDefault.default).post(`https://kikla-139bdd8f8b23.herokuapp.com/${id}`, {
+            const res = await (0, _axiosDefault.default).post(`${noteUpdatePath + id}`, {
                 content: noteContent,
                 user: user,
                 noteTitle: noteTitle
@@ -69266,6 +69267,7 @@ function UpdateNote() {
                 });
                 setLoading(false);
                 setNoteContent(res.data[0].content);
+                setNoteTitle(res.data[0].noteTitle);
             } catch (error) {
                 setLoading(false);
                 console.log(error);
@@ -69282,24 +69284,24 @@ function UpdateNote() {
             children: "Loading Note..."
         }, void 0, false, {
             fileName: "src/pages/UpdateNote.js",
-            lineNumber: 127,
+            lineNumber: 128,
             columnNumber: 9
         }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: (0, _createNoteModuleCssDefault.default).createNote,
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tasksDefault.default), {}, void 0, false, {
                     fileName: "src/pages/UpdateNote.js",
-                    lineNumber: 130,
-                    columnNumber: 12
+                    lineNumber: 131,
+                    columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createTaskDefault.default), {}, void 0, false, {
                     fileName: "src/pages/UpdateNote.js",
-                    lineNumber: 131,
-                    columnNumber: 7
+                    lineNumber: 132,
+                    columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBarDefault.default), {}, void 0, false, {
                     fileName: "src/pages/UpdateNote.js",
-                    lineNumber: 132,
+                    lineNumber: 133,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -69307,7 +69309,7 @@ function UpdateNote() {
                     children: "Update Note"
                 }, void 0, false, {
                     fileName: "src/pages/UpdateNote.js",
-                    lineNumber: 133,
+                    lineNumber: 134,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69323,7 +69325,7 @@ function UpdateNote() {
                             onChange: (e)=>setNoteTitle(e.target.value)
                         }, void 0, false, {
                             fileName: "src/pages/UpdateNote.js",
-                            lineNumber: 136,
+                            lineNumber: 137,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactQuillDefault.default), {
@@ -69335,13 +69337,13 @@ function UpdateNote() {
                             className: (0, _createNoteModuleCssDefault.default).custom_editor
                         }, void 0, false, {
                             fileName: "src/pages/UpdateNote.js",
-                            lineNumber: 146,
+                            lineNumber: 147,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/UpdateNote.js",
-                    lineNumber: 135,
+                    lineNumber: 136,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createButtonDefault.default), {
@@ -69349,7 +69351,7 @@ function UpdateNote() {
                     funName: updateNote
                 }, void 0, false, {
                     fileName: "src/pages/UpdateNote.js",
-                    lineNumber: 156,
+                    lineNumber: 157,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -69357,22 +69359,22 @@ function UpdateNote() {
                     children: status
                 }, void 0, false, {
                     fileName: "src/pages/UpdateNote.js",
-                    lineNumber: 157,
+                    lineNumber: 158,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/pages/UpdateNote.js",
-            lineNumber: 129,
+            lineNumber: 130,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "src/pages/UpdateNote.js",
-        lineNumber: 124,
+        lineNumber: 126,
         columnNumber: 5
     }, this);
 }
-_s(UpdateNote, "VpaXQbMo5IRdB89DCkrn6f5akSE=", false, function() {
+_s(UpdateNote, "c6KH2KEDKc9X+RUFHIqDp1Gf/eM=", false, function() {
     return [
         (0, _reactRouterDom.useParams)
     ];
