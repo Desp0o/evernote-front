@@ -7,7 +7,7 @@ import axios from "axios";
 import Spinner from "../spinner/Sipnner";
 
 export default function NotesDashboard() {
-  const { user } = useContext(ProviderPass);
+  const { user, fetchNotes, setFetchNotes } = useContext(ProviderPass);
 
   const [notesArray, setNotesArray] = useState([]);
   const [notesArrayReversed, setNotesArrayReversed] = useState([]);
@@ -15,24 +15,27 @@ export default function NotesDashboard() {
 
   const getAllNotesPath = process.env.REACT_APP_GET_ALL_NOTES
 
-  useEffect(() => {
-    const getNotes = async () => {
-      setLoading(true);
-      try {
-        const res = await axios.get(getAllNotesPath, {
-          params: { uid: user.uid },
-          withCredentials: true,
-        });
-        setNotesArray(res.data.reverse());
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    };
 
+  const getNotes = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(getAllNotesPath, {
+        params: { uid: user.uid },
+        withCredentials: true,
+      });
+      setNotesArray(res.data.reverse());
+      setLoading(false);
+      setFetchNotes(false)
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
+
+  useEffect(() => {
     getNotes();
-  }, []);
+  }, [fetchNotes]);
 
   useEffect(() => {
     setNotesArrayReversed(notesArray);

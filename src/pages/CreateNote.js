@@ -88,6 +88,7 @@ export default function CreateNote() {
           content: content,
           user: user,
           noteTitle: noteTitle,
+          syntaxed: ''
         },
         {
           withCredentials: true,

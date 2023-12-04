@@ -14,6 +14,10 @@
     opacity: 0.4;
 }
 
+.syntaxBG{
+    background-color: red !important;
+}
+
 .single_note_body{
     padding: 50px;
 

@@ -41,9 +41,35 @@
     height: 95%;
     color: whitesmoke;
     padding: 0px 20px 20px 20px;
-
+    font-size: 16px;
     vertical-align: top; 
     resize: none;
+}
+
+.save_btn{
+    background-color: #6F6C52;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save_btn{
+    box-sizing: border-box;
+    background-color: #6F6C52;
+    width: 100%;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.save_btn:hover{
+    background-color: #545242;
 }
 
 @media (max-width:1000px) {

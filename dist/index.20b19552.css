@@ -257,8 +257,26 @@
   width: 100%;
   height: 95%;
   padding: 0 20px 20px;
+  font-size: 16px;
   position: absolute;
   bottom: 0;
+}
+
+._-D4Rq_save_btn {
+  box-sizing: border-box;
+  color: #f5f5f5;
+  cursor: pointer;
+  background-color: #6f6c52;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  transition: all .3s;
+  display: flex;
+}
+
+._-D4Rq_save_btn:hover {
+  background-color: #545242;
 }
 
 @media (width <= 1000px) {
@@ -566,6 +584,10 @@ input, textarea {
   background-image: none;
   border: none;
   outline: none;
+}
+
+input, textarea:focus {
+  font-size: 16px;
 }
 
 a {
@@ -1973,6 +1995,10 @@ input, textarea {
   top: 50%;
   left: 50%;
   transform: translateY(-50%);
+}
+
+.-\38 y-LG_syntaxBG {
+  background-color: red !important;
 }
 
 .-\38 y-LG_single_note_body {
