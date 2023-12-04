@@ -22,6 +22,7 @@ export const ProviderContext = ({ children }) => {
   const [sidebarHandler, setSideBarHandler] = useState(false)
   const [signInError, setSignInError] = useState(false)
   const [searchStatus, setSearchStatus] = useState(false)
+  const [fetchNotes, setFetchNotes] = useState(false)
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("currentUser")) || null
   );
@@ -123,6 +124,8 @@ export const ProviderContext = ({ children }) => {
     setCreateTask(false);
   };
 
+
+
   return (
     <ProviderPass.Provider
       value={{
@@ -144,7 +147,9 @@ export const ProviderContext = ({ children }) => {
         setSideBarHandler,
         signInError,
         searchStatus,
-        setSearchStatus
+        setSearchStatus,
+        fetchNotes,
+        setFetchNotes
       }}
     >
       {children}
