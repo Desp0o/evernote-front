@@ -21,6 +21,7 @@
     height: 100vh;
     background-color: var(--dark-light);
     z-index: 5;
+    transition: all 0.2s ease;
     overflow-x:hidden;
     padding: 10px;
 }
