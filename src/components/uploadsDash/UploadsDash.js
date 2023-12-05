@@ -1,38 +1,51 @@
-import React, { useContext, useState } from 'react'
-import {ProviderPass} from "../Provider"
-import axios from 'axios'
-import "./uploadsDash.css"
+import React, { useState, useContext } from 'react';
+import upDashStyles from "./uploadsDash.module.css"
+import { ProviderPass } from '../Provider';
+import axios from 'axios';
 
-export default function UploadsDash() {
+const FileUpload = () => {
+  const [file, setFile] = useState(null);
   const {user} = useContext(ProviderPass)
 
-  const [uploadFile, setUploadFile] = useState('')
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
 
-  const fileHandler = (e) => {
-    setUploadFile(e.target.files[0])
-}
+  const handleUpload = async () => {
+    if (!file) {
+      console.error('Please select a file.');
+      return;
+    }
 
-const sendFile = async () => {
-  const formData = new FormData();
-  formData.append("user", user);
-  formData.append("file", uploadFile);
-  console.log(formData);
+    // Dummy user and fileUid for demonstration
+    
 
-  try {
-    console.log(user.email);
-    const response = await axios.post('http://localhost:3300/uploadfile', formData, { withCredentials: true, headers: {'Content-Type': 'multipart/form-data',} });
+    const body = {
+      user: user.email,
+      fileUid : user.uid,
+      file: file
+    }
 
-    console.log(res.data);
-  } catch (error) {
-    console.log(error.response);
-  }
-};
+    try {
+      const response = await axios.post('http://localhost:3300/uploadfile', body, {
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
+  };
 
   return (
-    <div className='uploadsDash'>
-
-      <input type='file' name='file' onChange={fileHandler} />
-      <button onClick={sendFile}>add</button>
+    <div className={upDashStyles.uploadsDash}>
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={handleUpload}>Upload File</button>
     </div>
-  )
-}
+  );
+};
+
+export default FileUpload;
