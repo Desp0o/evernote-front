@@ -2063,6 +2063,11 @@ input, textarea {
   font-size: 12px;
 }
 
+._3X30WG_sending_status {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .-\38 y-LG_single_note_page {
   box-sizing: border-box;
   position: relative;
