@@ -1,4 +1,5 @@
 .uploadsDash{
+    box-sizing: border-box;
     position: relative;
     width: 99%;
     height: 260px;
@@ -8,4 +9,75 @@
 
     color: whitesmoke;
     overflow: hidden;
+
+    padding: 20px;
+}
+
+.upload_container_wraper{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: whitesmoke;
+}
+
+.upload_input_container{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    display: flex;
+}
+
+.upload_input_style{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer !important;
+    scale: 2;
+}
+
+.custom_upload_btn{
+  width: 80px;
+  height: 30px;
+
+  border-radius: 10px;
+  background-color: var(--grey);
+  cursor: pointer;
+
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yes_mark{
+  width: 20px;
+}
+
+.mark_container{
+  width: 20px;
+}
+
+.send_btn_active{
+  width: 80px;
+  height: 30px;
+
+  border-radius: 10px;
+  background-color: var(--green);
+  cursor: pointer;
+
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.send_btn_active:hover{
+  transition: all .3s ease;
+  background-color: var(--green-hover);
 }

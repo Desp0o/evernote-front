@@ -309,13 +309,99 @@
 }
 
 .Xmxk6G_uploadsDash {
+  box-sizing: border-box;
   background-color: var(--black-light);
   color: #f5f5f5;
   border-radius: 10px;
   width: 99%;
   height: 260px;
+  padding: 20px;
   position: relative;
   overflow: hidden;
+}
+
+.Xmxk6G_upload_container_wraper {
+  color: #f5f5f5;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.Xmxk6G_upload_input_container {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.Xmxk6G_upload_input_style {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  scale: 2;
+  cursor: pointer !important;
+}
+
+.Xmxk6G_custom_upload_btn {
+  background-color: var(--grey);
+  cursor: pointer;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 30px;
+  font-size: 13px;
+  display: flex;
+}
+
+.Xmxk6G_yes_mark, .Xmxk6G_mark_container {
+  width: 20px;
+}
+
+.Xmxk6G_send_btn_active {
+  background-color: var(--green);
+  cursor: pointer;
+  cursor: pointer;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 30px;
+  font-size: 13px;
+  transition: all .3s;
+  display: flex;
+}
+
+.Xmxk6G_send_btn_active:hover {
+  background-color: var(--green-hover);
+  transition: all .3s;
+}
+
+.w3cA7G_uplading_file_status {
+  opacity: 1;
+  color: var(--pink);
+  transition: all .3s;
+  animation-name: w3cA7G_uploading_animation;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes w3cA7G_uploading_animation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .TWBqmG_search {

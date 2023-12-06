@@ -1,0 +1,21 @@
+.uplading_file_status{
+    opacity: 1;
+    transition: all 0.3s ease;
+    animation-name: uploading_animation;
+    animation-duration: 2s; /* Set the duration of your animation */
+    animation-iteration-count: infinite; /* Set the iteration count to infinite for looping */
+    animation-timing-function: ease;
+    color: var(--pink);
+  }
+  
+  @keyframes uploading_animation {
+    0%{
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
