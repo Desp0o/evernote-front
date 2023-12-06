@@ -3,20 +3,20 @@ import { ProviderPass } from "../Provider";
 import stylesTask from "./Tasks.module.css";
 import axios from "axios";
 import TaskButtonComponent from "./TaskButtonComponent";
+import Uploading from "../Uploading/Uploading";
 
 export default function CreateTask() {
-  const {
-    createTaks,
-    setTaskHandlerWork,
-    user,
-    closeAllTaskElements
-  } = useContext(ProviderPass);
+  const { createTaks, setTaskHandlerWork, user, closeAllTaskElements } =
+    useContext(ProviderPass);
   const [taskContent, setTaskContent] = useState("");
   const createTaskPath = process.env.REACT_APP_CREATE_TASK;
   const [taskStatus, setTaskStatus] = useState("");
 
+  const [isSending, setIsSending] = useState(false);
+
   const sendTask = async () => {
     if (taskContent.length > 0) {
+      setIsSending(true);
       try {
         const res = await axios.post(
           createTaskPath,
@@ -35,13 +35,16 @@ export default function CreateTask() {
           setTaskHandlerWork(true);
         }
 
+        setIsSending(false);
         setTaskStatus(res.data);
         setTaskContent("");
       } catch (error) {
         console.log(error);
         setTaskStatus("Here Is Some Error");
+        setIsSending(false);
       }
     } else {
+      setIsSending(false);
       setTaskStatus("Enter Task You Lazy..");
     }
   };
@@ -51,7 +54,13 @@ export default function CreateTask() {
   };
 
   return (
-    <div className={createTaks ? stylesTask.create_task_bg : stylesTask.create_task_bg_disabled}>
+    <div
+      className={
+        createTaks
+          ? stylesTask.create_task_bg
+          : stylesTask.create_task_bg_disabled
+      }
+    >
       <div className={stylesTask.create_task}>
         <div className={stylesTask.taks_dot}>
           <div className={stylesTask.task_circle} />
@@ -66,15 +75,21 @@ export default function CreateTask() {
           />
         </div>
 
-        <p
-          className={
-            taskStatus === "Task has been created successfully."
-              ? stylesTask.task_status
-              : stylesTask.task_status_error
-          }
-        >
-          {taskStatus}
-        </p>
+        {isSending ? (
+          <div className={stylesTask.sending_status_style}>
+            <Uploading text="Creating Task . . ." />
+          </div>
+        ) : (
+          <p
+            className={
+              taskStatus === "Task has been created successfully."
+                ? stylesTask.task_status
+                : stylesTask.task_status_error
+            }
+          >
+            {taskStatus}
+          </p>
+        )}
 
         <div className={stylesTask.crt_tasks_btns}>
           <TaskButtonComponent

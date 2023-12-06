@@ -893,6 +893,10 @@ input, textarea {
   right: 20px;
 }
 
+._4uGZa_sending_status_style {
+  text-align: center;
+}
+
 @media (width <= 768px) {
   ._4uGZa_tasks {
     box-sizing: border-box;
