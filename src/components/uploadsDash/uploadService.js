@@ -3,22 +3,23 @@ import upDashStyles from "./uploadsDash.module.css";
 import { ProviderPass } from "../Provider";
 import axios from "axios";
 
-import yMark from "../../utils/icons/yes-mark.webp"
+import yMark from "../../utils/icons/yes-mark.webp";
 import Uploading from "../Uploading/Uploading";
 
 const UploadHandler = () => {
   const [file, setFile] = useState(null);
-  const { user } = useContext(ProviderPass);
+  const { user, getFilesHandler } = useContext(ProviderPass);
 
-  const [isUploading, setIsUploading] = useState(false)
+  const [isFileUploadCompleted, setIsFileUploadCompleted] = useState(false)
+  const [isUploading, setIsUploading] = useState(false);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
+    setIsFileUploadCompleted(false)
   };
 
   const handleUpload = async () => {
-    setIsUploading(true)
-
+    setIsUploading(true);
 
     const body = {
       user: user.email,
@@ -37,12 +38,14 @@ const UploadHandler = () => {
           },
         }
       );
-      setIsUploading(false)
+      setIsFileUploadCompleted(true)
+      setIsUploading(false);
       console.log(response.data);
+      getFilesHandler();
     } catch (error) {
-      setIsUploading(false)
+      setIsUploading(false);
       // console.error("Error uploading file:", error);
-      alert("Error uploading file: Network Error")
+      alert("Error uploading file: Network Error");
     }
   };
 
@@ -57,16 +60,21 @@ const UploadHandler = () => {
         />
       </div>
 
-      {isUploading ? <Uploading text='Uploading . . .' /> : 
-      file ? <>
-        <img src={yMark} alt="y mark" className={upDashStyles.yes_mark} />
-  
-        <div className={upDashStyles.send_btn_active} onClick={handleUpload}>Upload File</div>
-        </> :
-          <p>Choose file</p>
-        }
+      {isUploading ? (
+        <Uploading text="Uploading . . ." />
+      ) : file ? (
+        <>
+          
 
-      
+          <div className={upDashStyles.send_btn_active} onClick={handleUpload}>
+            Upload File
+          </div>
+        </>
+      ) : (
+        <p>Choose file</p>
+      )}
+
+      {isFileUploadCompleted ? <img src={yMark} alt="y mark" className={upDashStyles.yes_mark} /> : <></>}
     </div>
   );
 };

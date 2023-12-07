@@ -135,6 +135,7 @@
 }
 
 .document_type_fetched_file{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,4 +154,35 @@
 
 .document_file_style{
   height: 70px;
+}
+
+
+.image_type_file_container{
+  position: relative;
+}
+
+.video_type_file_container{
+  position: relative;
+}
+
+.document_type_fetched_file_container{
+  position: relative;
+}
+
+.trash_can{
+  position: absolute;
+  bottom: -23px;
+  right: 0;
+  width: 15px;
+  cursor: pointer;
+}
+
+.empty_files_container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: 900;
+  opacity: 0.2;
 }

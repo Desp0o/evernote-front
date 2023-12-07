@@ -437,6 +437,7 @@
   align-items: center;
   gap: 5px;
   display: flex;
+  position: relative;
 }
 
 .Xmxk6G_document_file_title {
@@ -448,6 +449,28 @@
 
 .Xmxk6G_document_file_style {
   height: 70px;
+}
+
+.Xmxk6G_image_type_file_container, .Xmxk6G_video_type_file_container, .Xmxk6G_document_type_fetched_file_container {
+  position: relative;
+}
+
+.Xmxk6G_trash_can {
+  cursor: pointer;
+  width: 15px;
+  position: absolute;
+  bottom: -23px;
+  right: 0;
+}
+
+.Xmxk6G_empty_files_container {
+  opacity: .2;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .w3cA7G_uplading_file_status {

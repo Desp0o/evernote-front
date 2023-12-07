@@ -17,6 +17,7 @@ export const ProviderContext = ({ children }) => {
   const [taskToggler, setTaskToggler] = useState(false);
   const [createTaks, setCreateTask] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [FetchedFilesLoading, setFetchedFilesLoading] = useState(false)
   const [user, setUser] = useState(null);
   const [taskHandlerWork, setTaskHandlerWork] = useState(false);
   const [sidebarHandler, setSideBarHandler] = useState(false)
@@ -124,6 +125,32 @@ export const ProviderContext = ({ children }) => {
     setCreateTask(false);
   };
 
+  //retireve and save in array uploaded files
+  const [fetchedFiles, setFetchedFiles] = useState([]);
+  const getFilesHandler = async () => {
+    setFetchedFilesLoading(true);
+    try {
+      const res = await axios.get("http://localhost:3300/getfiles", {
+        withCredentials: true,
+        params: {
+          user: user.email,
+          uid: user.uid,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      setFetchedFiles(res.data);
+      console.log(res.data);
+      setFetchedFilesLoading(false);
+    } catch (error) {
+      console.log(error);
+      setFetchedFilesLoading(false);
+    }
+  };
+
+  
 
 
   return (
@@ -149,7 +176,11 @@ export const ProviderContext = ({ children }) => {
         searchStatus,
         setSearchStatus,
         fetchNotes,
-        setFetchNotes
+        setFetchNotes,
+        getFilesHandler,
+        fetchedFiles, 
+        setFetchedFiles,
+        FetchedFilesLoading
       }}
     >
       {children}
