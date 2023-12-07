@@ -41,7 +41,8 @@ const UploadHandler = () => {
       console.log(response.data);
     } catch (error) {
       setIsUploading(false)
-      console.error("Error uploading file:", error);
+      // console.error("Error uploading file:", error);
+      alert("Error uploading file: Network Error")
     }
   };
 
