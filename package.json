@@ -4,9 +4,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "parcel build"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
@@ -17,7 +15,6 @@
     "axios": "^1.6.2",
     "dracula": "^0.0.3",
     "firebase": "^10.7.0",
-    "gh-pages": "^6.1.0",
     "quill-blot-formatter": "^1.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
