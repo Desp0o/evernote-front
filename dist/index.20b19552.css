@@ -2043,6 +2043,8 @@ input, textarea {
 
 ._3X30WG_custom_editor {
   box-sizing: border-box;
+  border-bottom: 1px solid #fff;
+  height: 500px;
   overflow: hidden;
 }
 

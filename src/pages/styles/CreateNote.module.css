@@ -20,6 +20,8 @@
 .custom_editor{
     overflow: hidden;
     box-sizing: border-box;
+    height: 500px;
+    border-bottom: 1px solid white;
 }
 
 .note_title_input{
