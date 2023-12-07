@@ -10,31 +10,6 @@ import DocumentTypeFile from "./DocumentTypeFile";
 export default function RetriveFiles() {
   const { user, FetchedFilesLoading, getFilesHandler, fetchedFiles } =
     useContext(ProviderPass);
-  const [isLoading, setIsLoading] = useState(false);
-  // const [fetchedFiles, setFetchedFiles] = useState([]);
-
-  // const getFilesHandler = async () => {
-  //   setIsLoading(true);
-  //   try {
-  //     const res = await axios.get("http://localhost:3300/getfiles", {
-  //       withCredentials: true,
-  //       params: {
-  //         user: user.email,
-  //         uid: user.uid,
-  //       },
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-
-  //     setFetchedFiles(res.data);
-  //     console.log(res.data);
-  //     setIsLoading(false);
-  //   } catch (error) {
-  //     console.log(error);
-  //     setIsLoading(false);
-  //   }
-  // };
 
   useEffect(() => {
     getFilesHandler();
@@ -43,7 +18,7 @@ export default function RetriveFiles() {
   const deleteFile = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:3300/deletefiles/${id}`,
+        `${process.env.REACT_APP_DELETE_FILE}${id}`,
         {
           withCredentials: true,
           params: {

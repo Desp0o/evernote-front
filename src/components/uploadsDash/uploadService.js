@@ -29,7 +29,7 @@ const UploadHandler = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3300/uploadfile",
+        process.env.REACT_APP_UPLOAD_FILE,
         body,
         {
           withCredentials: true,
