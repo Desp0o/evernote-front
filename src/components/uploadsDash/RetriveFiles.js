@@ -47,7 +47,7 @@ export default function RetriveFiles() {
       ) : FetchedFilesLoading ? (
         <Spinner />
       ) : (
-        fetchedFiles?.map((item) =>
+        fetchedFiles && fetchedFiles?.map((item) =>
           item.fileMimeType.startsWith("image") ? (
             <ImageFile
               fetchedItem={item}
