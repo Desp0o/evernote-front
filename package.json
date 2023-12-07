@@ -1,4 +1,5 @@
 {
+  "homepage": "https://desp0o.github.io/evernote-front/",
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
@@ -14,6 +15,7 @@
     "axios": "^1.6.2",
     "dracula": "^0.0.3",
     "firebase": "^10.7.0",
+    "gh-pages": "^6.1.0",
     "quill-blot-formatter": "^1.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
