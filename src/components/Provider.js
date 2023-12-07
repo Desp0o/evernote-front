@@ -130,7 +130,7 @@ export const ProviderContext = ({ children }) => {
   const getFilesHandler = async () => {
     setFetchedFilesLoading(true);
     try {
-      const res = await axios.get("http://localhost:3300/getfiles", {
+      const res = await axios.get(process.env.REACT_APP_FETCHED_FILE_PATH, {
         withCredentials: true,
         params: {
           user: user.email,
