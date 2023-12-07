@@ -42,7 +42,7 @@ export default function RetriveFiles() {
     <div className={upDashStyles.retrieved_files}>
       
 
-      {fetchedFiles.length === 0 ? (
+      {fetchedFiles?.length === 0 ? (
         <p className={upDashStyles.empty_files_container}>You Have No Files</p>
       ) : FetchedFilesLoading ? (
         <Spinner />
