@@ -7,7 +7,7 @@ import searchIcon from "../../utils/icons/search.webp"
 import SearchedElement from './SearchedElement'
 
 export default function Search() {
-  const { searchStatus, setSearchStatus } = useContext(ProviderPass)
+  const { searchStatus, setSearchStatus, user } = useContext(ProviderPass)
   const [searchedData, setSearchedData] = useState([])
   const [value, setValue] =useState('')
   const seatchNotePath = process.env.REACT_APP_SEARCH_NOTE
@@ -22,7 +22,13 @@ export default function Search() {
 
   const searchHandler = async (searchTerm)=>{
     try {
-      const res = await axios(`${seatchNotePath + searchTerm}`)
+      const res = await axios(`${seatchNotePath + searchTerm}`,{withCredentials: true,
+        params: {
+          uid: user.uid,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },})
       setSearchedData(res.data)
     } catch (error) {
       console.error('Error fetching search results', error)

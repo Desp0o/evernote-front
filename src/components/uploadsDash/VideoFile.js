@@ -8,7 +8,7 @@ export default function VideoFile({ fetchedFile, funName }) {
         <img className={upDashStyles.trash_can} src={trashCan} alt="delete trash can" onClick={funName}/>
         <video className={upDashStyles.video_style} controls>
           <source
-            src={`${process.env.REACT_APP_FETCHED_FILE_PATH}${fetchedFile.file}`}
+            src={`${process.env.REACT_APP_SINGLE_FILE_PATH}${fetchedFile.file}`}
             type="video/mp4"
           />
           Your browser does not support the video tag.

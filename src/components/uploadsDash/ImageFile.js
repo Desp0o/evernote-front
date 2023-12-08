@@ -24,13 +24,13 @@ export default function ImageFile({ fetchedItem, funName }) {
     <div className={upDashStyles.image_type_file_container} >
       <img className={upDashStyles.trash_can} src={trashCan} alt="delete trash can" onClick={funName}/>
       <img
-        src={`${process.env.REACT_APP_FETCHED_FILE_PATH}${fetchedItem.file}`}
+        src={`${process.env.REACT_APP_SINGLE_FILE_PATH}${fetchedItem.file}`}
         className={upDashStyles.fetched_file_image}
         onClick={() => openImageFullScreenHandler(fetchedItem)}
       />
 
       <img
-        src={`${process.env.REACT_APP_FETCHED_FILE_PATH}${selectedImage}`}
+        src={`${process.env.REACT_APP_SINGLE_FILE_PATH}${selectedImage}`}
         className={
           isFullScreenImage
             ? upDashStyles.fetched_file_image_full_screen

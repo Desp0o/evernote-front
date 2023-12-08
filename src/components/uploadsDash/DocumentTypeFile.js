@@ -12,7 +12,7 @@ export default function DocumentTypeFile({fetchedFile, funName}) {
     <div className={upDashStyles.document_type_fetched_file_container}>
       <img className={upDashStyles.trash_can} src={trashCan} alt="delete trash can" onClick={funName}/>
     <a
-      href={`${process.env.REACT_APP_FETCHED_FILE_PATH}${fetchedFile.file}`}
+      href={`${process.env.REACT_APP_SINGLE_FILE_PATH}${fetchedFile.file}`}
       target="_blank"
       className={upDashStyles.document_type_fetched_file}
     >
