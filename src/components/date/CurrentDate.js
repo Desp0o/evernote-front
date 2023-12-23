@@ -1,5 +1,5 @@
 import React from 'react'
-import dataStyle from "./date.module.css"
+import * as dataStyle from "./date.module.css"
 
 export default function CurrentDate() {
 

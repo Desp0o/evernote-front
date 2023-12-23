@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ProviderPass } from '../Provider'
-import greetNameStyle from "./greetingName.module.css"
+import * as greetNameStyle from "./greetingName.module.css"
 
 export default function GreetingName() {
     const {currentUser} = useContext(ProviderPass)

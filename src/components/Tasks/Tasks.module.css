@@ -182,6 +182,10 @@
     cursor: pointer;
 }
 
+.sending_status_style{
+    text-align: center;
+}
+
 @media (max-width:768px) {
     .tasks{
         box-sizing: border-box;

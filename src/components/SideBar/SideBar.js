@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { ProviderPass } from '../Provider'
-import styles from "./SideBar.module.css"
+import * as styles from "./SideBar.module.css"
 import Search from '../Search/Search'
 import AddNew from '../addNew/AddNew'
 import SidebarLinkBlock from './SidebarLinkBlock'

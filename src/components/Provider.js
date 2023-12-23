@@ -17,6 +17,7 @@ export const ProviderContext = ({ children }) => {
   const [taskToggler, setTaskToggler] = useState(false);
   const [createTaks, setCreateTask] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [FetchedFilesLoading, setFetchedFilesLoading] = useState(false)
   const [user, setUser] = useState(null);
   const [taskHandlerWork, setTaskHandlerWork] = useState(false);
   const [sidebarHandler, setSideBarHandler] = useState(false)
@@ -53,6 +54,7 @@ export const ProviderContext = ({ children }) => {
   }, [currentUser]);
 
   const authHandler = async () => {
+    setLoading(true)
     try {
       const auth = getAuth(app);
       const provider = new GoogleAuthProvider();
@@ -71,8 +73,11 @@ export const ProviderContext = ({ children }) => {
       });
 
       if(res.status === 200){
+        setLoading(false)
         navigate("/pages/Evernote");
       }
+
+      
       
     } catch (error) {
       console.error("Authentication Error:", error.message);
@@ -81,6 +86,7 @@ export const ProviderContext = ({ children }) => {
       alert('Server Error')
       navigate('/')
       handleLogout()
+      setLoading(false)
     }
 
    
@@ -124,6 +130,31 @@ export const ProviderContext = ({ children }) => {
     setCreateTask(false);
   };
 
+  //retireve and save in array uploaded files
+  const [fetchedFiles, setFetchedFiles] = useState([]);
+  const getFilesHandler = async () => {
+    setFetchedFilesLoading(true);
+    try {
+      const res = await axios.get(process.env.REACT_APP_FETCHED_FILE_PATH, {
+        withCredentials: true,
+        params: {
+          user: user.email,
+          uid: user.uid,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      setFetchedFiles(res.data.reverse());
+      setFetchedFilesLoading(false);
+    } catch (error) {
+      console.log(error);
+      setFetchedFilesLoading(false);
+    }
+  };
+
+  
 
 
   return (
@@ -149,7 +180,11 @@ export const ProviderContext = ({ children }) => {
         searchStatus,
         setSearchStatus,
         fetchNotes,
-        setFetchNotes
+        setFetchNotes,
+        getFilesHandler,
+        fetchedFiles, 
+        setFetchedFiles,
+        FetchedFilesLoading
       }}
     >
       {children}

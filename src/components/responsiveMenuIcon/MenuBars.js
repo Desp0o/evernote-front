@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ProviderPass } from '../Provider'
 import menuOpen from "../../utils/icons/menu.webp"
 import menuClose from "../../utils/icons/close.webp"
-import resMenuIconStyle from "./responsiveMenuIcon.module.css"
+import * as resMenuIconStyle from "./responsiveMenuIcon.module.css"
 
 export default function MenuBars() {
     const {sidebarHandler,setSideBarHandler} = useContext(ProviderPass)

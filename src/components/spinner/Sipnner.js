@@ -1,5 +1,5 @@
 import React from 'react'
-import spinnerStyle from "./spinner.module.css"
+import * as spinnerStyle from "./spinner.module.css"
 
 export default function Sipnner() {
   return (

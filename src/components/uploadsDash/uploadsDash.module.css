@@ -1,11 +1,208 @@
-.uploadsDash{
-    position: relative;
-    width: 99%;
-    height: 260px;
+.uploadsDash {
+  box-sizing: border-box;
+  position: relative;
+  width: 99%;
+  height: 260px;
 
-    background-color: var(--black-light);
-    border-radius: 10px;
+  background-color: var(--black-light);
+  border-radius: 10px;
 
-    color: whitesmoke;
-    overflow: hidden;
+  color: whitesmoke;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.demo_mode{
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: whitesmoke;
+
+  p{
+    opacity: 0.2;
+    font-weight: 900;
+    padding: 0 20px;
+  }
+}
+
+.upload_container_wraper {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: whitesmoke;
+  flex: 1;
+}
+
+.upload_input_container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  display: flex;
+}
+
+.upload_input_style {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer !important;
+  scale: 2;
+}
+
+.custom_upload_btn {
+  width: 80px;
+  height: 30px;
+
+  border-radius: 10px;
+  background-color: var(--grey);
+  cursor: pointer;
+
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yes_mark {
+  width: 20px;
+}
+
+.mark_container {
+  width: 20px;
+}
+
+.send_btn_active {
+  width: 80px;
+  height: 30px;
+
+  border-radius: 10px;
+  background-color: var(--green);
+  cursor: pointer;
+
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.send_btn_active:hover {
+  transition: all 0.3s ease;
+  background-color: var(--green-hover);
+}
+
+.retrieved_files {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.retrieved_files::-webkit-scrollbar {
+  width: 12px;
+}
+
+.retrieved_files::-webkit-scrollbar-thumb {
+  background-color: var(--green);
+  border-radius: 6px;
+}
+
+.retrieved_files::-webkit-scrollbar-track {
+  background-color: var(--dark-light);
+}
+
+.fetched_file_image {
+  height: 100px;
+  width: auto;
+  cursor: pointer;
+}
+
+.fetched_file_image_full_screen {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: calc(50% + 250px);
+  transform: translate(calc(-50% - 125px), -50%);
+  cursor: pointer;
+  z-index: 7;
+}
+
+.fetched_file_image_full_screen_disabled {
+  display: none;
+}
+
+.video_style {
+  height: 100px;
+  width: 150px;
+}
+
+.document_type_fetched_file{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.document_file_title{
+  width: 100px;
+  word-break: break-all;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+
+.document_file_style{
+  height: 70px;
+}
+
+
+.image_type_file_container{
+  position: relative;
+}
+
+.video_type_file_container{
+  position: relative;
+}
+
+.document_type_fetched_file_container{
+  position: relative;
+}
+
+.trash_can{
+  position: absolute;
+  bottom: -23px;
+  right: 0;
+  width: 15px;
+  cursor: pointer;
+}
+
+.empty_files_container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: 900;
+  opacity: 0.2;
 }

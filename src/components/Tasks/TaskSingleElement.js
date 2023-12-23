@@ -1,6 +1,6 @@
 import React from "react";
 import trashCan from "../../utils/icons/delete.webp"
-import styles from "./Tasks.module.css";
+import * as styles from "./Tasks.module.css";
 
 export default function TaskSingleElement({body, funName, nameOfClass, deleteHandler, completedHandler, bodyClass}) {
   return (

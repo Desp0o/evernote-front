@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { ProviderPass } from "../components/Provider";
-import crNote from "./styles/CreateNote.module.css";
-import notePagStyle from "./styles/notePage.module.css";
+import * as crNote from "./styles/CreateNote.module.css";
+import * as notePagStyle from "./styles/notePage.module.css";
 import ReactQuill from "react-quill";
 import { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom";
 import Container from "../components/container/Container";
 import Tasks from "../components/Tasks/Tasks";
 import CreateTask from "../components/Tasks/CreateTask";
+import Uploading from "../components/Uploading/Uploading";
 
 Quill.register("modules/blotFormatter", BlotFormatter);
 
@@ -155,7 +156,7 @@ export default function UpdateNote() {
           </div>
 
           <CreateButton text="Update Note" funName={updateNote} />
-          <p className={crNote.note_response_status}>{status}</p>
+          {sending ? <div className={crNote.sending_status}> <Uploading text='Updating Note . . . ' /> </div> : <p className={crNote.note_response_status}>{status}</p>}
         </div>
       )}
     </Container>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-import scratchStyle from "./ScratchPad.module.css";
+import * as scratchStyle from "./ScratchPad.module.css";
 import SmallTitleComponent from "../smallTitleComponent/SmallTitleComponent";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";

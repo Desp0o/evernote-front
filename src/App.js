@@ -9,7 +9,7 @@ import UpdateNote from "./pages/UpdateNote";
 import AllNotes from "./pages/AllNotes";
 import MenuBars from "./components/responsiveMenuIcon/MenuBars";
 import { ProviderContext } from "./components/Provider";
-import styles from "./index.module.css"
+import * as styles from "./index.module.css"
 
 
 export function App() {
