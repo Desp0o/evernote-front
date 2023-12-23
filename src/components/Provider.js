@@ -54,6 +54,7 @@ export const ProviderContext = ({ children }) => {
   }, [currentUser]);
 
   const authHandler = async () => {
+    setLoading(true)
     try {
       const auth = getAuth(app);
       const provider = new GoogleAuthProvider();
@@ -72,8 +73,11 @@ export const ProviderContext = ({ children }) => {
       });
 
       if(res.status === 200){
+        setLoading(false)
         navigate("/pages/Evernote");
       }
+
+      
       
     } catch (error) {
       console.error("Authentication Error:", error.message);
@@ -82,6 +86,7 @@ export const ProviderContext = ({ children }) => {
       alert('Server Error')
       navigate('/')
       handleLogout()
+      setLoading(false)
     }
 
    

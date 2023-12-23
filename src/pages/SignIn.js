@@ -1,15 +1,19 @@
-import React, {useContext } from 'react';
-import CreateButton from '../components/createButton/CreateButton';
-import { ProviderPass } from '../components/Provider';
-import * as signInStyle from './styles/signin.module.css';
-
+import React, { useContext } from "react";
+import CreateButton from "../components/createButton/CreateButton";
+import { ProviderPass } from "../components/Provider";
+import * as signInStyle from "./styles/signin.module.css";
+import Sipnner from "../components/spinner/Sipnner";
 
 export default function SignIn() {
-  const { authHandler} = useContext(ProviderPass)
+  const { authHandler, loading } = useContext(ProviderPass);
 
   return (
     <div className={signInStyle.signin}>
-      <CreateButton text='Sign In' funName={authHandler} />
+      {loading ? (
+        <Sipnner />
+      ) : (
+        <CreateButton text="Sign In" funName={authHandler} />
+      )}
     </div>
   );
 }
