@@ -1,5 +1,5 @@
 import React from 'react';
-import upDashStyles from "./uploadsDash.module.css"
+import * as upDashStyles from "./uploadsDash.module.css"
 import UploadHandler from './uploadService';
 import RetriveFiles from './RetriveFiles';
 

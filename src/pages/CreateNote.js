@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { ProviderPass } from "../components/Provider";
-import crNote from "./styles/CreateNote.module.css"
+import * as crNote from "./styles/CreateNote.module.css"
 import ReactQuill from "react-quill";
 import { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";

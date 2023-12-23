@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ProviderPass } from "../Provider";
-import stylesTask from "./Tasks.module.css";
+import * as stylesTask from "./Tasks.module.css";
 import axios from "axios";
 import TaskButtonComponent from "./TaskButtonComponent";
 import Uploading from "../Uploading/Uploading";

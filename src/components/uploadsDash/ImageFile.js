@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import upDashStyles from "./uploadsDash.module.css";
+import * as upDashStyles from "./uploadsDash.module.css";
 import trashCan from "../../utils/icons/delete.webp"
 
 export default function ImageFile({ fetchedItem, funName }) {

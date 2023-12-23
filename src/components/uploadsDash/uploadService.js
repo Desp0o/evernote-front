@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import upDashStyles from "./uploadsDash.module.css";
+import * as upDashStyles from "./uploadsDash.module.css";
 import { ProviderPass } from "../Provider";
 import axios from "axios";
 
@@ -40,7 +40,6 @@ const UploadHandler = () => {
       );
       setIsFileUploadCompleted(true)
       setIsUploading(false);
-      console.log(response.data);
       getFilesHandler();
     } catch (error) {
       setIsUploading(false);

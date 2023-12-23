@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import noteDashStyle from "./NotesDashboard.module.css";
+import * as noteDashStyle from "./NotesDashboard.module.css";
 import SmallTitleComponent from "../smallTitleComponent/SmallTitleComponent";
 import SingleNote from "../singleNote/SingleNote";
 import { ProviderPass } from "../Provider";

@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import stylesTask from "./Tasks.module.css";
+import * as stylesTask from "./Tasks.module.css";
 import axios from "axios";
 import { ProviderPass } from "../Provider";
 import TaskSingleElement from "./TaskSingleElement";

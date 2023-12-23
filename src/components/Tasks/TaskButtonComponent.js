@@ -1,5 +1,5 @@
 import React from 'react'
-import stylesTask from "./Tasks.module.css"
+import * as stylesTask from "./Tasks.module.css"
 
 export default function TaskButtonComponent({text, funName}) {
   return (

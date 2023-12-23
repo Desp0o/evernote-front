@@ -1,5 +1,5 @@
 import React, {useState, useContext} from "react";
-import upDashStyles from "./uploadsDash.module.css";
+import * as upDashStyles from "./uploadsDash.module.css";
 import documentIcon from "../../utils/icons/document.webp"
 import trashCan from "../../utils/icons/delete.webp"
 import { ProviderPass } from "../Provider";

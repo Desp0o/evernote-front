@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./SideBar.module.css"
+import * as styles from "./SideBar.module.css"
 import { Link } from 'react-router-dom'
 
 export default function SidebarLinkBlock({icon, linkName, path, funName}) {

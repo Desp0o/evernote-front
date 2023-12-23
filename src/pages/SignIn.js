@@ -1,7 +1,7 @@
 import React, {useContext } from 'react';
 import CreateButton from '../components/createButton/CreateButton';
 import { ProviderPass } from '../components/Provider';
-import signInStyle from './styles/signin.module.css';
+import * as signInStyle from './styles/signin.module.css';
 
 
 export default function SignIn() {

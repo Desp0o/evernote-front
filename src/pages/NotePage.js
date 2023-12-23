@@ -3,7 +3,7 @@ import { ProviderPass } from "../components/Provider";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import SideBar from "../components/SideBar/SideBar";
-import notePagStyle from "./styles/notePage.module.css";
+import * as notePagStyle from "./styles/notePage.module.css";
 import Container from "../components/container/Container";
 import deleteIocn from "../utils/icons/delete.webp";
 import updatePost from "../utils/icons/updatePost.webp";

@@ -141,8 +141,7 @@ export const ProviderContext = ({ children }) => {
         },
       });
 
-      setFetchedFiles(res.data);
-      console.log(res.data);
+      setFetchedFiles(res.data.reverse());
       setFetchedFilesLoading(false);
     } catch (error) {
       console.log(error);

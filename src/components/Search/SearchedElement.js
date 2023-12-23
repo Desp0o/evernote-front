@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ProviderPass } from '../Provider'
-import searchStyle from './Search.module.css'
+import * as searchStyle from './Search.module.css'
 import { Link } from "react-router-dom";
 
 export default function SearchedElement({ data }) {

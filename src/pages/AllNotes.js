@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { ProviderPass } from "../components/Provider";
 import axios from "axios";
-import styles from "./styles/allnotes.module.css";
+import * as styles from "./styles/allnotes.module.css";
 import SideBar from "../components/SideBar/SideBar";
 import SingleNote from "../components/singleNote/SingleNote";
 import Container from "../components/container/Container";

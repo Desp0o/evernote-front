@@ -1,5 +1,5 @@
 import React from 'react'
-import uploadingStyle from "./uploading.module.css"
+import * as uploadingStyle from "./uploading.module.css"
 
 export default function Uploading({text}) {
   return (

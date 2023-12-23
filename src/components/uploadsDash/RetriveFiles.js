@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Spinner from "../spinner/Sipnner";
 import { ProviderPass } from "../Provider";
-import upDashStyles from "./uploadsDash.module.css";
+import * as upDashStyles from "./uploadsDash.module.css";
 import ImageFile from "./ImageFile";
 import VideoFile from "./VideoFile";
 import DocumentTypeFile from "./DocumentTypeFile";
@@ -32,7 +32,6 @@ export default function RetriveFiles() {
         }
       );
       getFilesHandler();
-      console.log(res.data);
     } catch (error) {
       console.log(error);
     }

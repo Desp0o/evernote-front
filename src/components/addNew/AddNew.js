@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import addNewStyles from "./AddNew.module.css"
+import * as addNewStyles from "./AddNew.module.css"
 import ShortCutElemen from '../ShortCutElement/ShortCutElemen'
 
 import addIco from "../../utils/icons/add.webp"

@@ -1,5 +1,5 @@
 import React from 'react'
-import crBtnStyle from "./CreateButton.module.css"
+import * as crBtnStyle from "./CreateButton.module.css"
 
 export default function CreateButton({text, funName}) {
   return (

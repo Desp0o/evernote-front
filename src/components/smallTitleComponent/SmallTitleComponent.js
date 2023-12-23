@@ -1,5 +1,5 @@
 import React from 'react'
-import smTitStyle from "./SmallTitleComponent.module.css"
+import * as smTitStyle from "./SmallTitleComponent.module.css"
 
 export default function SmallTitleComponent({title}) {
   return (

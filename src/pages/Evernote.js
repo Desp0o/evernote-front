@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./styles/evernote.module.css"
+import * as styles from "./styles/evernote.module.css"
 import NotesDashboard from '../components/notesDashbouard/NotesDashboard'
 import ScratchPad from '../components/scratchPad/ScratchPad'
 import CurrentDate from '../components/date/CurrentDate'

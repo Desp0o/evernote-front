@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import singNoteStyle from "./SingleNote.module.css"
+import * as singNoteStyle from "./SingleNote.module.css"
 import { Link } from 'react-router-dom'
 
 export default function SingleNote({title, content, timeStamp, id, funName}) {

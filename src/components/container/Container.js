@@ -1,6 +1,6 @@
 import React from 'react'
 
-import stylesIndex from "../../index.module.css"
+import * as stylesIndex from "../../index.module.css"
 
 export default function Container(props) {
   return (
