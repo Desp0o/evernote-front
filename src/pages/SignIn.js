@@ -6,11 +6,11 @@ import Sipnner from "../components/spinner/Sipnner";
 import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
-  const { authHandler, loading, user, currentUser } = useContext(ProviderPass);
+  const { authHandler, loading, user } = useContext(ProviderPass);
   const navigate = useNavigate()
 
   useEffect(()=>{
-    if(user || currentUser){
+    if(user){
       navigate('/pages/Evernote')
     }
   },[])
