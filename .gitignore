@@ -2,3 +2,5 @@
 /.parcel-cache
 /dist
 .env
+env
+.DS_Store
