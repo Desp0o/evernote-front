@@ -42,7 +42,8 @@ export default function RetriveFiles() {
       
 
       {fetchedFiles?.length === 0 ? (
-        <p className={upDashStyles.empty_files_container}>You Have No Files</p>
+        // <p className={upDashStyles.empty_files_container}>You Have No Files</p>
+        <p className={upDashStyles.empty_files_container}>Not In Free Mode</p>
       ) : FetchedFilesLoading ? (
         <Spinner />
       ) : (

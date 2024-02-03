@@ -10,6 +10,10 @@ const FileUpload = () => {
     <div className={upDashStyles.uploadsDash}>
         <UploadHandler />
         <RetriveFiles />
+
+        <div className={upDashStyles.noUpload}>
+          <div className='noUpload_inner'></div>
+        </div>
     </div>
   );
 };
