@@ -33,6 +33,7 @@
     font-size: 30px;
     font-weight: 900;
     opacity: 0.2;
+    text-align: center;
 }
 
 .notes_container::-webkit-scrollbar {
