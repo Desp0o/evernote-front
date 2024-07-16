@@ -22,7 +22,9 @@ export default function SignIn() {
         <Sipnner />
       ) : (
         <>
-          <p className={styles.stand_by}>This website is hosted on a free VPS, so you may need to wait a few minutes for it to recover. Please stand by.</p>
+          <p className={styles.stand_by}>This website is hosted on a free host, so you may need to wait a few minutes for it to recover. 
+            <span className={styles.stand_by_pls}> Please stand by.</span>
+          </p>
           <CreateButton text="Sign In" funName={authHandler} />
         </>
       )}

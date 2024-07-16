@@ -95,6 +95,10 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .stand_by_pls{
+    color: #A73CBD;
+  }
   
   @media (max-width:768px) {
     .container{
