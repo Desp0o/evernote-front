@@ -84,6 +84,17 @@
   input, textarea{
     outline: none;
   }
+
+  .stand_by{
+    color: #2FA82D;
+    text-align: center;
+    font-weight: 600;
+
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   
   @media (max-width:768px) {
     .container{
